@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+  
+
+<div class="col text-muted">
+    <h2 class=" text-center text-muted">Create Account</h2>
+  <form method="post" >
+    {% csrf_token %}
+    
+
+  
+    
+{% for field in form %}
+<div class="form-label">
+    {{ field.label_tag }}
+    {{ field }}
+    {% if field.errors %}
+    {{ field.errors }}
+    {% endif %}
+</div>
+{% endfor %}
+
+    <button type="submit" class="btn btn-primary bi bi-box-arrow-right" > Registrar</button>
+  </form>
+
+</div>
+
+</body>
+
+<style>
+body{
+  background-image: url(/static/img/bg/drone-sobre-fondo-oscuro_543889-296.webp);
+  background-repeat: no-repeat;
+ 
+}
+
+</style>
+
+
+
+{% endblock content %}

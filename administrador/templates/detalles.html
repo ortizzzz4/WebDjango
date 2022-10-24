@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="card-body mt-5">
+    <p class=" text-uppercase text-center text-primary ">Informacion</p>
+    <div class="card bg-dark text-white">
+    <p>Nombre  {{ registro.nombre }}</p>
+    <p>Apellido  {{ registro.apellido }}</p>
+    <p>Residencia  {{ registro.residencia }}</p>
+    <p>Fecha de creacion  {{ registro.created_at }}</p>
+    {% if registros.image %}
+    <p><img src="{{ registros.image.url }}" alt="{{registro.nombre}}" class="img-fluid" width="20%">
+    </p>
+    {% endif %}
+</div>
+    
+    <a class="btn btn-primary mt-2" href="{% url 'index' %}">Regresar Atras</a>
+    
+    </div>
+
+<style>
+
+    body{
+       background-image: url(/static/img/bg/bg_bggenerator_com\ \(1\).png);
+    }
+
+</style>
+
+{% endblock content %} 

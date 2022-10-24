@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    
+
+<div class="container mb-5 text-white bg-gradient" >
+ 
+    <form method="POST">
+        {% csrf_token %}
+        {{ registro_form.as_p }}
+
+        <button class="btn btn-outline-primary">Guardar</button>
+    </form>
+
+</div>
+</body>
+
+<style>
+    body{
+       background-image: url(/static/img/bg/bgge.png);
+      
+      
+       
+    } 
+    @media screen and (max-width: 600px) {
+        .container{
+           
+            font-size: 15px;
+        }
+    }   
+
+</style>
+{% endblock %} 

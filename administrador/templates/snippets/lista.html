@@ -1,0 +1,78 @@
+{% url 'administrador:crear' as crear %}
+
+{% url 'administrador:eliminar' as eliminar %}
+
+{% block content %}
+<div class="container">
+
+    <a href="{{ crear }}" class="btn btn-dark mt-5">Crear Nuevo</a>
+
+    <table class="table table-bordered table-info mt-5 text-center">
+    <thead>
+        <tr>
+       
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Residencia</th>
+        <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for registro in registros %}
+            <tr>
+               
+                <td>{{  registro.nombre }}</td>
+                <td>{{  registro.apellido }}</td>
+                <td>{{  registro.residencia }}</td>
+               
+               
+               
+                
+               
+                <td>
+                  
+                    
+                    <!--<a href="{#% url 'actualizar' p.id %#}" class="btn btn-success">Actualizar</a> -->
+                    <a href="{% url 'administrador:detalles' registro.id %}" class="btn btn-danger">Ver mas</a>
+                    <a href="{% url 'administrador:editar' registro.id %}" class="btn btn-success">Editar</a>
+                    <a href="{% url 'administrador:eliminar' registro.id %}" class="btn btn-primary">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+
+</div>
+
+<style>
+    @media screen and (max-width: 600px) {
+        table {
+            width:100%;
+        }
+        thead {
+            display: none;
+        }
+        tr:nth-of-type(2n) {
+            background-color: inherit;
+        }
+        tr td:first-child {
+            background: #f0f0f0;
+            font-weight:bold;
+            font-size:1.3em;
+        }
+        tbody td {
+            display: block;
+            text-align:center;
+        }
+        tbody td:before {
+            content: attr(data-th);
+            display: block;
+            text-align:center;
+        }
+ }
+
+</style>
+
+
+{% endblock %}
