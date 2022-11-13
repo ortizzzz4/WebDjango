@@ -18,7 +18,6 @@ def index(request) :
         }
     )
 
-#def detalles(request , id) :
  #   registro = get_object_or_404(Registro , pk = id) 
 #
  #   return render(

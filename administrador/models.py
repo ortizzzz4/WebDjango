@@ -5,7 +5,9 @@ class Registro(models.Model):
     nombre=models.CharField(max_length=50)
     apellido=models.CharField(max_length=50)
     residencia=models.CharField(max_length=200)
-    image=models.ImageField(upload_to='fotos/', null=True, blank=True)
+   # image=models.ImageField(upload_to='fotos/', null=True, blank=True)
+    
+    correo=models.EmailField(blank=False)
     created_at=models.DateTimeField(auto_now_add=True)
     numero_identificacion=models.IntegerField()
     
