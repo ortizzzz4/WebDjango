@@ -1,6 +1,6 @@
 from operator import mod
-from django.db import models
 
+from django.db import models
 class Registro(models.Model):
     nombre=models.CharField(max_length=50)
     apellido=models.CharField(max_length=50)
